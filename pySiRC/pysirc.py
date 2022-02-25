@@ -22,15 +22,7 @@ import matplotlib.pyplot as plt
 
 IMAGE_SUPP = Image.open('figs/logos.png')
 IMG_Fig1 = Image.open('figs/Fig1.png')
-#IMG_Fig1 = IMG_Fig1.resize((750,400))
 IMG_Fig2 = Image.open('figs/Fig2.png')
-#IMG_Fig2 = IMG_Fig2.resize((750,400))
-
-
-#IMG_TABLE_MODELS = Image.open('figs/table_models.jpeg')
-#IMG_TABLE_MODELS = IMG_TABLE_MODELS.resize((750,400))
-#IMG_TABLE_AD = Image.open('figs/table_AD.jpeg')
-#IMG_TABLE_AD = IMG_TABLE_AD.resize((750, 420))
 
 class BackEnd:
     def __init__(self):

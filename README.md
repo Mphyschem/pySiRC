@@ -1,7 +1,4 @@
-[![DOI](https://zenodo.org/badge/290038246.svg)](https://zenodo.org/badge/latestdoi/290038246)
-
 # pySiRC
-<img src="/doc/presentation_pysirc.gif?raw=true" align="center">
 
 pySiRC is a simple web application for predicting rate constant using machine learning models.
 The models used are: XGBoost, Random Forest and MultiLayer Perceptron (Neural network). It is possible to make predictions for oxidation reactions with the radicals OH and SO4 with just a few clicks. To access this application remotely use the link [pysirc.com.br](http://pysirc.com.br/).
@@ -58,7 +55,7 @@ $ sudo pip3 install streamlit numpy cirpy pandas seaborn scikit-learn XGBoost tq
 
 Download this repository, manually or via git:
 ```
-$ git clone https://github.com/jeffrichardchemistry/pySiRC
+$ git clone https://github.com/Mphyschem/pySiRC
 ```
 
 ## Run
@@ -70,4 +67,9 @@ $ streamlit run pySiRC.py
 That done, the application will open in the browser and the terminal will have the
 local ip for access to all devices connected on the same network
 
+## Citation
+Please cite the following reference when publishing results obtained with pySiRC:
+
+(i) Sanches-Neto, F. O., Dias-Silva, J. R., Keng Queiroz Junior, L. H., & Carvalho-Silva, V. H. (2021). “pySiRC”: Machine Learning Combined with Molecular Fingerprints to Predict the Reaction Rate Constant of the Radical-Based Oxidation Processes of Aqueous Organic Contaminants. Environmental Science & Technology, 55(18), 12437-12448, [https://doi.org/10.1021/acs.est.1c04326](https://doi.org/10.1021/acs.est.1c04326); 
+(ii) Sanches-Neto, F. O., Dias-Silva, J. R., de Oliveira, V.M,  Aquilanti, V., & Carvalho-Silva, V. H. (2022). Evaluating and elucidating the reactivity of OH radicals with atmospheric organic pollutants: Reaction kinetics and mechanisms by machine learning. Atmospheric Environment, 119019,[https://doi.org/10.1016/j.atmosenv.2022.119019](https://doi.org/10.1016/j.atmosenv.2022.119019). 
 
