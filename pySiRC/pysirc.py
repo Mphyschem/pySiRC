@@ -1,35 +1,37 @@
 import numpy as np
 import pandas as pd
 import streamlit as st
+from streamlit_option_menu import option_menu
 import base64
 import textwrap
-
 from texts import Texts
 from pysirc_tools import ApplicabilityDomain
-
 import pickle
 import cirpy
-
 from rdkit.Chem import AllChem, Draw
 from rdkit.Chem import MACCSkeys
 from rdkit import Chem
 from rdkit.Chem import rdDepictor, Descriptors
 from rdkit.Chem.Draw import rdMolDraw2D
-
 from PIL import Image
-
 import seaborn as sns
 sns.set_style('darkgrid')
 import matplotlib.pyplot as plt
-
-from state import count_sessions
-count_sessions()
+#from state import count_sessions
+#count_sessions()
 
 IMAGE_SUPP = Image.open('figs/logos.png')
-IMG_TABLE_MODELS = Image.open('figs/table_models.jpeg')
-IMG_TABLE_MODELS = IMG_TABLE_MODELS.resize((750,400))
-IMG_TABLE_AD = Image.open('figs/table_AD.jpeg')
-IMG_TABLE_AD = IMG_TABLE_AD.resize((750, 420))
+IMG_Fig1 = Image.open('figs/Fig1.png')
+#IMG_Fig1 = IMG_Fig1.resize((750,400))
+IMG_Fig2 = Image.open('figs/Fig2.png')
+#IMG_Fig2 = IMG_Fig2.resize((750,400))
+
+
+#IMG_TABLE_MODELS = Image.open('figs/table_models.jpeg')
+#IMG_TABLE_MODELS = IMG_TABLE_MODELS.resize((750,400))
+#IMG_TABLE_AD = Image.open('figs/table_AD.jpeg')
+#IMG_TABLE_AD = IMG_TABLE_AD.resize((750, 420))
+
 class BackEnd:
     def __init__(self):
         self.max_kOH = 24.81761039916851
@@ -323,10 +325,10 @@ class FrontEnd(BackEnd):
             st.header('Python Simulator of Rate Constant')
             st.markdown('{}'.format(self.text1), unsafe_allow_html=True)
             st.markdown('{}'.format(self.text1_2), unsafe_allow_html=True)
-            st.image(IMG_TABLE_MODELS)
+            st.image(IMG_Fig1)
             st.markdown('{}'.format(self.text1_3), unsafe_allow_html=True)
-            st.image(IMG_TABLE_AD)
-            st.markdown('{}'.format(self.text1_4), unsafe_allow_html=True)
+            col1, col2, col3 = st.columns([0.2, 5, 0.2])
+            col2.image(IMG_Fig2, use_column_width=True)
         
         if nav == 'Simulator Aqueous Media':
             st.title('Simulator rate constant in Aqueous Media')
@@ -873,9 +875,39 @@ class FrontEnd(BackEnd):
             st.markdown('{}'.format(self.text3), unsafe_allow_html=True)
             st.image(IMAGE_SUPP, use_column_width=True)
 
+        if nav == 'Citation':
+            st.markdown('{}'.format(self.text1_4), unsafe_allow_html=True)
+        
+        if nav == 'Contact':
+
+            #st.header(":mailbox: Entre em contato comigo!!")
+            st.header("Contact me!!")
+            contact_form = """
+            <form action="https://formsubmit.co/mphyschemlab@gmail.com" method="POST">
+             <input type="hidden" name="_captcha" value="false">
+             <input type="text" name="name" placeholder="Your name" optional>
+             <input type="email" name="email" placeholder="Your e-mail" optional>
+             <textarea name="message" placeholder="Type your message here"></textarea>
+             <button type="submit">Send</button>
+            </form>
+            """
+
+            st.markdown(contact_form, unsafe_allow_html=True)
+            FrontEnd.local_css("style/style.css")
+
+    
+    def local_css(file_name):
+        with open(file_name) as f:
+            return st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
+
+
     def NavigationBar(self):
-        st.sidebar.markdown('# Navegation:')
-        nav = st.sidebar.radio('Go to:', ['HOME', 'Simulator Aqueous Media', 'Half-life Aqueous Media', 'Simulator Gas Phase','Half-life Gas Phase', 'POCP', 'About'])
+        with st.sidebar:
+            nav = option_menu('Navegation:', ['HOME', 'Simulator Aqueous Media', 'Half-life Aqueous Media', 'Simulator Gas Phase','Half-life Gas Phase', 'POCP', 'About', 'Citation', 'Contact'], 
+            icons=['house', 'water', 'file-bar-graph' , 'wind', 'file-bar-graph-fill', 'ui-radios-grid', 'box-arrow-in-left', 'journal-check',  'chat-left-text-fill'], menu_icon="cast", default_index=0)
+        
+        #st.sidebar.markdown('# Navegation:')
+        #nav = st.sidebar.radio('Go to:', ['HOME', 'Simulator Aqueous Media', 'Half-life Aqueous Media', 'Simulator Gas Phase','Half-life Gas Phase', 'POCP', 'About'])
         
         st.sidebar.markdown('# Contribute')
         st.sidebar.info('{}'.format(self.text2))
