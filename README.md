@@ -67,9 +67,13 @@ $ streamlit run pySiRC.py
 That done, the application will open in the browser and the terminal will have the
 local ip for access to all devices connected on the same network
 
-## Citation
-Please cite the following reference when publishing results obtained with pySiRC:
-
-(i) Sanches-Neto, F. O., Dias-Silva, J. R., Keng Queiroz Junior, L. H., & Carvalho-Silva, V. H. (2021). “pySiRC”: Machine Learning Combined with Molecular Fingerprints to Predict the Reaction Rate Constant of the Radical-Based Oxidation Processes of Aqueous Organic Contaminants. Environmental Science & Technology, 55(18), 12437-12448, [https://doi.org/10.1021/acs.est.1c04326](https://doi.org/10.1021/acs.est.1c04326); 
-(ii) Sanches-Neto, F. O., Dias-Silva, J. R., de Oliveira, V.M,  Aquilanti, V., & Carvalho-Silva, V. H. (2022). Evaluating and elucidating the reactivity of OH radicals with atmospheric organic pollutants: Reaction kinetics and mechanisms by machine learning. Atmospheric Environment, 119019,[https://doi.org/10.1016/j.atmosenv.2022.119019](https://doi.org/10.1016/j.atmosenv.2022.119019). 
+<body style='text-align: justify; color: black;'>
+<h1 style='text-align: justify; color: black;'>pySiRC website</h1>
+<p> pySiRC - a program that permits compilation of kinetic parameters in aqueous and atmospheric environment.
+<h2 style='text-align: justify; color: black;'>Citation</h2>
+Please cite the following reference when publishing results obtained with pySiRC:<br>
+(i) Sanches-Neto, F. O., Dias-Silva, J. R., Keng Queiroz Junior, L. H., & Carvalho-Silva, V. H. (2021). “pySiRC”: Machine Learning Combined with Molecular Fingerprintto Predict the Reaction Rate Constant of the Radical-Based Oxidation Processes of Aqueous Organic Contaminants. Environmental Science & Technology, 55(18), 12437-12448<a href="https://doi.org/10.1021/acs.est.1c04326"target="_blank">https://doi.org/10.1021/acs.est.1c04326</a><br>
+(ii) Sanches-Neto, F. O., Dias-Silva, J. R., de Oliveira, V.M,  Aquilanti, V., & Carvalho-Silva, V. H. (2022). Evaluating and elucidating the reactivity of OH radicalwith atmospheric organic pollutants: Reaction kinetics and mechanisms by machine learning. Atmospheric Environment, 119019, <a href="https://doi.org/10.1016/j.atmosen2022.119019"target="_blank">https://doi.org/10.1016/j.atmosenv.2022.119019</a>
+</p>
+</body>
 
