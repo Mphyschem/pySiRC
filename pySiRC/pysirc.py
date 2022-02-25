@@ -17,8 +17,8 @@ from PIL import Image
 import seaborn as sns
 sns.set_style('darkgrid')
 import matplotlib.pyplot as plt
-#from state import count_sessions
-#count_sessions()
+from state import count_sessions
+count_sessions()
 
 IMAGE_SUPP = Image.open('figs/logos.png')
 IMG_Fig1 = Image.open('figs/Fig1.png')
