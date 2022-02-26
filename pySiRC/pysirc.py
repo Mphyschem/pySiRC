@@ -92,7 +92,7 @@ class BackEnd:
         </style>"""        
         st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 
-    @st.cache
+    @st.cache(suppress_st_warning=True)
     def __load_basestrain(self):
         path_kOH_morgan = 'data/base_kOH_mfp.csv'
         path_kSO4_morgan = 'data/base_kSO4_mfp.csv'
