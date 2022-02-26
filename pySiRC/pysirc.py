@@ -92,6 +92,7 @@ class BackEnd:
         </style>"""        
         st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 
+    @st.cache
     def __load_basestrain(self):
         path_kOH_morgan = 'data/base_kOH_mfp.csv'
         path_kSO4_morgan = 'data/base_kSO4_mfp.csv'
@@ -111,7 +112,6 @@ class BackEnd:
 
         return self.base_train_kOH_morgan, self.base_train_kSO4_morgan, self.base_train_kOH_maccs, self.base_train_kSO4_maccs, self.base_train_morgan_GAS, self.base_train_maccs_GAS 
     
-    @st.cache
     def __load_models(self):
         ### aqueous phase
         path_kOH_morgan_rf   = r'models/rf_kOH_morgan.sav'
